@@ -233,7 +233,14 @@ yarn add gh-pages --dev
 }
 ```
 
-15. gatsby-config.js 설정
+16. robots.txt 파일 생성을 위한 라이브러리 세팅
+특정 검색 로봇으로 하여금 크롤링을 허용하는 페이지와 허용하지 않는 페이지를 지정
+
+```
+yarn add gatsby-plugin-robots-txt
+```
+
+16. gatsby-config.js 설정
 
 ```
 module.exports = {
@@ -310,6 +317,12 @@ module.exports = {
               stripQueryString: true,
             },
           },
+          {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+              policy: [{ userAgent: '*', allow: '/' }],
+            },
+          },
         ],
       },
     },
@@ -318,13 +331,13 @@ module.exports = {
 };
 ```
 
-14. 타입스크립트 설정파일 생성 -> tsconfig.json
+17. 타입스크립트 설정파일 생성 -> tsconfig.json
 
 ```
 yarn tsc --init
 ```
 
-15. tsconfig.json 설정
+18. tsconfig.json 설정
 
 ```
 {
@@ -408,7 +421,7 @@ yarn tsc --init
 }
 ```
 
-16. gatsby-node.js 파일에서 Webpack Config 추가
+19. gatsby-node.js 파일에서 Webpack Config 추가
 
 ```
 /**
@@ -438,7 +451,7 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
 };
 ```
 
-17. pages 디렉토리에 index.tsx 파일 생성
+20. pages 디렉토리에 index.tsx 파일 생성
 
 ```
 import React, { FunctionComponent } from 'react';
@@ -455,7 +468,7 @@ const IndexPage: FunctionComponent = function () {
 export default IndexPage;
 ```
 
-18. pages 디렉토리에 info.tsx 파일 생성
+21. pages 디렉토리에 info.tsx 파일 생성
 
 ```
 import React, { FunctionComponent } from 'react';
@@ -502,7 +515,7 @@ export const metadataQuery = graphql`
 `;
 ```
 
-19. 로컬 서버를 실행해 적용 사항들을 확인
+22. 로컬 서버를 실행해 적용 사항들을 확인
 
 ```
 yarn develop

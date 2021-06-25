@@ -2,7 +2,7 @@ import React, { createRef, FunctionComponent, useEffect } from 'react';
 import styled from '@emotion/styled';
 
 const src = 'https://utteranc.es/client.js';
-const repo = 'jpro6679/kopo_univ'; // 자신 계정의 레포지토리로 설정
+const repo = 'jpro6679/jpro6679.github.io'; // 자신 계정의 레포지토리로 설정
 
 type UtterancesAttributesType = {
     src: string;
