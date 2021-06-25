@@ -3,7 +3,7 @@ module.exports = {
     title: `기술 블로그`,
     description: `리액트 + Gatsby 프레임워크로 개발한 블로그`,
     author: `JPRO`,
-    // siteUrl: '<https://website.com/>',
+    siteUrl: 'https://jpro6679.github.io/',
   },
   plugins: [
     {
@@ -66,13 +66,13 @@ module.exports = {
               rel: 'nofollow',
             },
           },
-          // {
-          //   resolve: 'gatsby-plugin-canonical-urls',
-          //   options: {
-          //     siteUrl: '<https://website.com/>',
-          //     stripQueryString: true,
-          //   },
-          // },
+          {
+            resolve: 'gatsby-plugin-canonical-urls',
+            options: {
+              siteUrl: 'https://jpro6679.github.io/',
+              stripQueryString: true,
+            },
+          },
         ],
       },
     },
